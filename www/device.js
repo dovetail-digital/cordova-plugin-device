@@ -42,6 +42,7 @@ function Device() {
     this.cordova = null;
     this.model = null;
     this.manufacturer = null;
+    this.name = null;
 
     var me = this;
 
@@ -56,6 +57,7 @@ function Device() {
             me.uuid = info.uuid;
             me.cordova = buildLabel;
             me.model = info.model;
+            me.name = info.name;
             me.manufacturer = info.manufacturer || 'unknown';
             channel.onCordovaInfoReady.fire();
         },function(e) {
